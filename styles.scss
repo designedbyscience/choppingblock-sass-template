@@ -1,0 +1,22 @@
+/* 
+ * styles.scss
+ *
+ * @author: Chopping Block (choppingblock.com)
+ *
+ */
+
+//Start up sass with the commmand: sass --watch styles.scss:styles.css
+
+@import "partials/chop_utilities";
+@include reset();
+@include float_utilities();
+/* 
+* Global Styles
+*
+*/
+
+
+/*
+* Element Styles
+*
+*/
