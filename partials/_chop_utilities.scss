@@ -112,25 +112,24 @@
 //********************
 //Responsive Mixins:
 
-//layouts smaller than 600px, iPhone and mobiles
-@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px)  {
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px) { @content; }
+  }
+  @else if $media == medium-screens {
+ 	@media screen and (min-width: 920px) { @content; }
+  }
+  @else if $media == large-screens {
+ 	@media screen and (min-width: 1350px){ @content; }
+  }
+  @else if $media == wide-screens {
+	@media screen and (min-width: 1500px) { @content; }
+  }
+  @else if $media == iphone{
+ 	@media only screen and (max-device-width: 480px) { @content; }
+	}
+  @else if $media == ipad {
+ 	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) { @content; }
+	
+ }	
 }
-
-//layouts larger than 900px
-@media screen and (min-width: 920px) {
-}
-
-@media screen and (min-width: 1350px) {
-}
-
-@media screen and (min-width: 1500px) {
-}
-
-//Just iPhone
-@media only screen and (max-device-width: 480px) {
-}
-
-//iPad styles
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
-
