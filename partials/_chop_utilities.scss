@@ -161,6 +161,7 @@
 	  clear: both;
 	}
 	[class*="span"] {
+	  box-sizing: border-box;
 	  float: left;
 	  min-height: 1px;
 	}
