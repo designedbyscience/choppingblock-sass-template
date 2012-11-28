@@ -134,3 +134,44 @@
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 }
 
+//**********************
+//Grid generation mixins
+//Makes spann_i and offsetn_i classes
+//Needs to include grid_prereqs to work properly
+
+@mixin grid_prereqs(){
+	.row {
+	  margin-left: -20px;
+	  *zoom: 1;
+	}
+	
+	.row:before,
+	.row:after {
+	  display: table;
+	  content: "";
+	  line-height: 0;
+	}
+	.row:after {
+	  clear: both;
+	}
+	[class*="span"] {
+	  float: left;
+	  min-height: 1px;
+	}
+}
+
+@mixin grid_columns($columns){
+	
+	@for $i from 1 through $columns{
+
+		.span#{$columns}_#{$i}{
+			width: (100 / $columns)*$i;		
+		}
+
+		.offset#{$columns}_#{$i}{
+			margin-left: (100 / $columns)*$i;			
+		}		
+	}
+}
+
+
